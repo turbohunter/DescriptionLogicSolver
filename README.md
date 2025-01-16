@@ -6,5 +6,5 @@ this repository is used for creating a description logic solver in haskell as pa
 - we have a hlint workflow performing linting of the code 
 
 
-## docu under the [Wiki tab](https://github.com/turbohunter/descriptiveLogicSolver/wiki)
+## docu under the [Wiki tab](https://github.com/turbohunter/DescriptionLogicSolver/wiki)
 
