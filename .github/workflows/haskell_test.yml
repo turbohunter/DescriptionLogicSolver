@@ -41,6 +41,9 @@ jobs:
           ${{ runner.os }}-build-
           ${{ runner.os }}-
 
+    - name: Install hspec-discover
+      run: cabal install hspec-discover --overwrite-policy=always
+  
     - name: Install dependencies
       run: |
         cabal update
