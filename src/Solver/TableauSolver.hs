@@ -4,7 +4,7 @@ import Data.List (find, nub, partition)
 import Solver.Types
   ( Concept (..),
     EdgeType (OrEdge, RoleEdge),
-    TableauNode (constraints, edgeType, hasClash),
+    TableauNode (constraints, edgeType, hasClash, originalConstraints),
     TableauTree (..),
     TableauZipper,
     addChild,
@@ -182,7 +182,7 @@ applyAndRules zipper =
         Nothing -> zipper
         Just (And c1 c2) ->
           let newConstraints = nub $ c1 : c2 : filter (/= And c1 c2) (constraints node)
-              newNode = node {constraints = newConstraints}
+              newNode = node {constraints = newConstraints, originalConstraints = newConstraints}
            in applyAndRules $ modifyCurrentNode newNode zipper
         Just _ -> zipper
   where
